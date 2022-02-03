@@ -1,6 +1,5 @@
 require "file_charset/version"
 
-module FileCharset
-  class Error < StandardError; end
+class FileCharset
   # Your code goes here...
 end
