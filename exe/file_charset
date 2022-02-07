@@ -1,3 +1,18 @@
 #!/usr/bin/env ruby
 
 require "file_charset"
+
+
+if ARGV.empty?
+  STDOUT.puts "Usage: file_charset --encoding <encoding-name> [path, path, ...]"
+end
+
+if ARGV.first == "--encoding"
+  encoding = ARGV.second
+  paths = ARGV[2..-1]
+else
+  encoding = "UTF_8"
+  paths = ARGV
+end
+
+exit FileCharset.are_the_string_encoding_files?(paths, encoding)
