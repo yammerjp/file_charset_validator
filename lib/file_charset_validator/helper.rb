@@ -5,7 +5,3 @@ def get_encoding(encoding_string)
     nil
   end
 end
-
-def message str
-  STDOUT.puts str
-end
