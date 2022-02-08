@@ -9,7 +9,7 @@ class FileCharset
 
   def self.check_paths(paths, encoding)
     invalid_paths = self.invalid_encoding_paths?(paths, encoding)
-    if invalid_paths.empty?
+    if !invalid_paths.empty?
       self.message "There are invalid encoding files...\n#{invalid_paths.join("\n")}"
     end
     invalid_paths.empty?
