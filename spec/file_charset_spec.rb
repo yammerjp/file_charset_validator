@@ -101,6 +101,7 @@ RSpec.describe FileCharset do
       end
     end
   end
+
   describe ".check_paths" do
     #TODO:  write here
   end

@@ -1,4 +1,5 @@
 require "file_charset/version"
+require "file_charset/helper.rb"
 
 class FileCharset
   def self.invalid_encoding_paths?(paths, encoding)
@@ -13,5 +14,17 @@ class FileCharset
       self.message "There are invalid encoding files...\n#{invalid_paths.join("\n")}"
     end
     invalid_paths.empty?
+  end
+
+  def self.check_paths_with_string_encoding(paths, string_encoding)
+    if string_encoding.nil?
+      encoding = Encoding::UTF_8
+    else
+      encoding = get_encoding(string_encoding)
+      if encoding.nil?
+        throw "unknown encoding: #{string_encoding}"
+      end
+    end
+    self.check_paths(paths, encoding)
   end
 end
