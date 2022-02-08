@@ -1,28 +1,40 @@
-# FileCharset
+# file_charset_validator
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/file_charset_validator`. To experiment with that code, run `bin/console` for an interactive prompt.
+file_charset_validator is CLI tool to validate text files' encoding.
 
-TODO: Delete this and the text above, and describe your gem
+This is implemented by ruby, and distributed as a gem.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Install it yourself as:
 
-```ruby
-gem 'file_charset_validator'
 ```
-
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install file_charset_validator
+$ gem install file_charset_validator
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+
+```sh
+$ file_charset_validator --encoding UTF_8 path/to/file/1 path/to/file/2
+```
+
+If the character codes of `path/to/file/1` and `path/to/file/2` are both UTF_8, it will exit normally.
+Otherwise, it will output a message and exit abnormally.
+
+
+### Options
+
+`--encoding` (`-e`)
+
+You can specify the character encoding to be verified.
+The character encoding that can be specified is defined as a constant in the encoding class of the ruby built-in library.
+
+### Arguments
+
+`<path, ...>`
+
+You can specify one or more file paths to be verified.
 
 ## Development
 
