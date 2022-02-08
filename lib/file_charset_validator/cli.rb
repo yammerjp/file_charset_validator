@@ -1,6 +1,6 @@
-require "file_charset"
+require "file_charset_validator"
 require "thor"
-require "file_charset/helper.rb"
+require "file_charset_validator/helper.rb"
 
 class CLI < Thor
   default_command :check
@@ -14,7 +14,7 @@ class CLI < Thor
     end
 
     begin
-      FileCharset.check_paths_with_string_encoding(paths, options[:encoding] || 'UTF_8')
+      FileCharsetValidator.check_paths_with_string_encoding(paths, options[:encoding] || 'UTF_8')
     rescue => e
       STDOUT.puts e
       exit 1

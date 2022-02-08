@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "file_charset"
+require "file_charset_validator"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

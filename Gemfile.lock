@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    file_charset (0.1.0)
+    file_charset_validator (0.1.0)
       thor
 
 GEM
@@ -28,7 +28,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  file_charset!
+  file_charset_validator!
   rake (~> 12.0)
   rspec (~> 3.0)
 

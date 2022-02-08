@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+
+require "file_charset_validator"
+require "file_charset_validator/cli.rb"
+
+
+=begin
+if ARGV.empty?
+  STDOUT.puts "Usage: file_charset_validator --encoding <encoding-name> [path, path, ...]"
+  exit 1
+end
+
+if ARGV[0] == "--encoding"
+  encoding = ARGV[1]
+  paths = ARGV[2..-1]
+else
+  encoding = "UTF_8"
+  paths = ARGV
+end
+
+exit FileCharsetValidator.check_paths_with_string_encoding(paths, encoding) ? 0 : 1
+=end
+
+CLI.start(ARGV)
