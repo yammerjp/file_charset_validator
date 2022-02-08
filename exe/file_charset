@@ -1,8 +1,10 @@
 #!/usr/bin/env ruby
 
 require "file_charset"
+require "file_charset/cli.rb"
 
 
+=begin
 if ARGV.empty?
   STDOUT.puts "Usage: file_charset --encoding <encoding-name> [path, path, ...]"
   exit 1
@@ -17,3 +19,6 @@ else
 end
 
 exit FileCharset.check_paths_with_string_encoding(paths, encoding) ? 0 : 1
+=end
+
+CLI.start(ARGV)

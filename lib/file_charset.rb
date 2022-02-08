@@ -11,19 +11,14 @@ class FileCharset
   def self.check_paths(paths, encoding)
     invalid_paths = self.invalid_encoding_paths?(paths, encoding)
     if !invalid_paths.empty?
-      self.message "There are invalid encoding files...\n#{invalid_paths.join("\n")}"
+      raise "There are invalid encoding files...\n#{invalid_paths.join("\n")}"
     end
-    invalid_paths.empty?
   end
 
   def self.check_paths_with_string_encoding(paths, string_encoding)
-    if string_encoding.nil?
-      encoding = Encoding::UTF_8
-    else
-      encoding = get_encoding(string_encoding)
-      if encoding.nil?
-        throw "unknown encoding: #{string_encoding}"
-      end
+    encoding = get_encoding(string_encoding)
+    if encoding.nil?
+      raise "unknown encoding: #{string_encoding}"
     end
     self.check_paths(paths, encoding)
   end
