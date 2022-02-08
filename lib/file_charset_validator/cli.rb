@@ -5,7 +5,7 @@ require "file_charset_validator/helper.rb"
 class CLI < Thor
   default_command :check
 
-  desc 'check', 'Check the character set of the file specified by the argument'
+  desc 'check [option] <path, ...>', 'Check the character set of the file specified by the arguments'
   option :encoding, type: :string, aliases: '-e', desc: 'Encoding name (ex. UTF_8, Shift_JIS, EUC_JP)'
   def check(*paths)
     if paths.empty?
