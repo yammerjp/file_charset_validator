@@ -1,6 +1,0 @@
-#!/usr/bin/env ruby
-
-require "file_charset"
-require "file_charset/cli.rb"
-
-CLI.start(ARGV)
