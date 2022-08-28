@@ -23,5 +23,5 @@ jobs:
       run: |
         echo "::add-matcher::.github/problem-matcher/file_charset_validator_error.json"
     - name: Run file_charset_validator
-      run: git diff main --name-only | xargs bundle exec file_charset_validator check
+      run: git diff origin/main --name-only | xargs bundle exec file_charset_validator check
 
