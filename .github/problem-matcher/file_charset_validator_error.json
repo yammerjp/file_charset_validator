@@ -1,0 +1,15 @@
+{
+  "file_charset_validator_error": [
+    {
+      "owner": "hoge",
+      "severity": "error",
+      "pattern": [
+        {
+          "regexp": "^(Invalid encoding files): (\\d+)$",
+          "file": 2,
+          "message": 1
+        }
+      ]
+    }
+  ]
+}
